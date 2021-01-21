@@ -1,0 +1,67 @@
+conky.config = {
+------------------#
+--   ;初始定义;   #
+------------------#
+	background = true,--嵌入桌面;
+	double_buffer = true,--双倍缓存，防止闪烁;
+--update_interval 0.05  	#刷新时间;
+--cpu_avg_samples 0.05    #数据监测模式 一般选2;
+	update_interval = 0.5,--刷新时间;
+	cpu_avg_samples = 2,--数据监测模式 一般选2;
+	font = 'DroidSans:size=8.75',--顶部对齐;
+--conky没有窗口运行配置
+--{
+	own_window = true,
+	own_window_type = 'normal',
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+--}
+-----------------------------------
+--#{
+	alignment = 'bottom_left',--conky显示位置，left左;right右;
+	minimum_width = 470, minimum_height = 220,--conky边界范围，最小宽度280像素，最小高度5像素;
+	maximum_width = 350,--conky最大宽度像素;
+--}
+-----------------------------------------
+--conky配置窗口透明;新版本;
+--{
+	own_window_argb_visual = true,
+	own_window_transpatent = 'true',
+--}
+-------------------------------------
+--字体定义;
+--{
+	use_xft = true,--自定义字体;
+	use_spacer = 'yes',
+	draw_shades = false,--字体外面形成影子，yes or no;
+	draw_borders = false,--线条勾勒出conky框，yes，or，no;
+--}
+--------------------------------------
+--Conky输出范围距离屏幕边界的像素数量，最小为10像素;
+--{
+--gap_x 10
+	gap_y = 100,
+--}
+------------------------------------------
+--颜色定义;---------------------------
+--{
+	color0 = 'red',
+	color1 = 'green',
+	color2 = 'red',
+	color3 = 'white',
+	color4 = '#000099',
+	color5 = '#3333FF',
+	color6 = 'DarkGray',
+	color7 = 'AntiqueWhite4',
+	color8 = 'DarkSlateGray',
+	color9 = 'Black',
+--}
+--##################
+--   ;conky配置;   #
+--##################
+};
+
+conky.text = [[
+${font DroidSans:bold:size=8}${color6}CONEXIONS:  ${color 3}${execp /home/whoami/.conky/parrot-monitoring/parrot.sh | wc -l}${offset 8}${color8}${voffset -2}${hr 2}${font}${offset 15}${color 3}${tcp_portmon 1 65535 count}
+${font DroidSans:bold:size=8.5}${execp /home/whoami/.conky/parrot-monitoring/parrot.sh}
+]];
