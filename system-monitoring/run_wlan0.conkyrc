@@ -1,0 +1,151 @@
+conky.config = {
+--=======================#
+--	;You are not Alone;  #
+--=======================#
+------------------#
+--   ;初始定义;   #
+------------------#
+	background = true,--嵌入桌面;
+	update_interval = 1,--刷新时间;
+	double_buffer = true,--双倍缓存，防止闪烁;
+----------------------------------------------------------
+	cpu_avg_samples = 1,
+	net_avg_samples = 2,
+	temperature_unit = 'celsius',
+----------------------------------------------------------
+	double_buffer = true,
+	no_buffers = true,
+	text_buffer_size = 2048,
+-----------------------------------------------------------
+--conky位置配置;
+--{
+--gap_x 40			#X轴偏移;
+--gap_y 70			#Y轴偏移;
+	minimum_width = 150, minimum_height = 1030,--conky边界范围，最小宽度280像素，最小高度5像素;
+	maximum_width = 350,--conky最大宽度像素;
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+	alignment = 'top_right',--conky显示位置;left左;right右;
+--}
+------------------------------------------------------------
+--conky没有窗口的运行的配置;
+--{
+	own_window = true,
+	own_window_transparent = true,
+	own_window_type = 'normal',
+	own_window_class = 'conky-semi',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',--永远粘在窗口，不管发生任何事;
+--}
+----------------------------------------------------------------------------------------------------
+--新版本conky透明背景配置;
+--{
+	own_window_argb_visual = true,--布尔值，设置窗口透明;
+	own_window_transparent = true,--布尔值，设置窗口透明;
+--}
+-----------------------------------------------------------
+--带conky以窗口的形式运行的配置;
+--{
+--own_window yes
+--own_window_type normal
+--own_window_transparent no
+--own_window_argb_visual yes
+--own_window_argb_visual yes
+--own_window_colour 000000	
+--own_window_argb_value 0
+--own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+--}
+------------------------------------------------------------------
+--conky字体配置;
+--{
+	override_utf8_locale = true,
+	use_xft = true,--自定义字体;
+--xftfont caviar dreams:size=10
+	xftalpha = 0.5,
+	uppercase = false,
+	draw_shades = false,
+	draw_outline = false,--字体外面包裹一层颜色，yes为包裹，no为不;
+	draw_borders = false,--线条勾勒出conky框，yes，or，no;
+	draw_graph_borders = false,
+	show_graph_range = true,
+--}
+----------------------------------------------------------------------------
+--RGB颜色配置;
+--{
+--default_color FFFFFF
+	color1 = '#FFFFFF',--白色;	
+--color0.1 FFFF00	#黄色;
+--color2 FF0000	#红色;
+--color 000000	#黑色;
+	color6 = '#BFEFFF',--淡蓝;
+	color5 = '#77B753',--草绿色;
+	color4 = '#FF6347',--深橙色;
+	color2 = '#FFE4E1',--深灰色;
+	color3 = '#888888',--浅灰色;
+--}
+---------------------------------------------------------------------------
+--加载画圈的lua脚本;
+--{ 
+	lua_load = '~/.conky/system-monitoring/system-monitoring.lua',
+	lua_draw_hook_post = 'main',
+--}
+--------------------------------------------------------------------------------
+--##################
+--   ;conky配置;	  #
+--##################
+};
+
+conky.text = [[
+#画线============================================================
+${font Ubuntu:bold:size=10}${color4}SYSTEM ${color6}${hr 2}
+#显示，kerner，hostname and username=============================
+${offset 15}${font Ubuntu:bold:size=10}${color1}Kernel:${color 5}                   "$kernel"${color6}${hr 2}
+${offset 15}${font Ubuntu:bold:size=10}${color1}Hostname:${color 5}                     "$nodename"${color6}${hr 2}
+${offset 15}${font Ubuntu:bold:size=10}${color1}Uptime:${color 5}                   "$uptime"${color6}${hr 2}
+
+#CPU占用率=========================================================================
+${voffset 20}
+${offset 120}${cpugraph 40,183 9400D3 FF0000}${voffset -25}
+${offset 90}${font Ubuntu:bold:size=10}${color5}CPU
+#显示前5个进程======================================================================
+${offset 105}${font Ubuntu:bold:size=10}${color4}${top name 1}${alignr}${top cpu 1}%
+${offset 105}${font Ubuntu:bold:size=10}${color1}${top name 2}${alignr}${top cpu 2}%
+${offset 105}${font Ubuntu:bold:size=10}${color2}${top name 3}${alignr}${top cpu 3}%
+${offset 105}${font Ubuntu:bold:size=10}${color3}${top name 4}${alignr}${top cpu 4}%
+${offset 105}${font Ubuntu:bold:size=10}${color3}${top name 5}${alignr}${top cpu 5}%
+
+#显示前五内存占用===================================================================
+${voffset 40}
+${offset 90}${font Ubuntu:bold:size=10}${color5}MEM
+${offset 105}${font Ubuntu:bold:size=10}${color4}${top_mem name 1}${alignr}${top_mem mem 1}%
+${offset 105}${font Ubuntu:bold:size=10}${color1}${top_mem name 2}${alignr}${top_mem mem 2}%
+${offset 105}${font Ubuntu:bold:size=10}${color2}${top_mem name 3}${alignr}${top_mem mem 3}%
+${offset 105}${font Ubuntu:bold:size=10}${color3}${top_mem name 4}${alignr}${top_mem mem 4}%
+${offset 105}${font Ubuntu:bold:size=10}${color3}${top_mem name 4}${alignr}${top_mem mem 5}%
+
+#显示以下存储空间的占用率 root，opt and /================================================
+${voffset 28}
+${offset 90}${font Ubuntu:bold:size=10}${color5}DISKS
+${offset 120}${diskiograph 33,183 838B83 0000CD}${voffset -30}
+${voffset 20}
+${offset 10}${font Ubuntu:bold:size=9}${color1} / : ${font Ubuntu:bold:size=7}${fs_free /}${alignr}${font Ubuntu:bold:siz2e=7}   Used: ${font Ubuntu:bold:size=9}${fs_used /}
+${offset 10}${font Ubuntu:bold:size=9}${color1}Opt: ${font Ubuntu:bold:size=7}${fs_free /opt}${alignr}${font Ubuntu:bold:size=9}Used: ${font Ubuntu:bold:size=9}${fs_used /home}
+${offset 10}${font Ubuntu:bold:size=9}${color1}Boot: ${font Ubuntu:bold:size=7}${fs_free /boot}${alignr}${font Ubuntu:bold:size=9}Used: ${font Ubuntu:bold:size=9}${fs_used /boot}
+
+#eth0,流量监控;=================================================================================
+${voffset 43}
+${offset 90}${font Ubuntu:bold:size=10}${color5}ETHERNET
+${voffset 40}             
+${offset 15}${color1}${font Ubuntu:bold:size=9}Up: ${alignr}${font Ubuntu:bold:size=9}$color2${upspeed wlan0} / ${totalup}
+${offset 15}${upspeedgraph wlan0 40,285 4B1B0C FF5C2B 100 -l}
+${offset 15}${color1}${font Ubuntu:bold:size=9}Down: ${alignr}${font Ubuntu:bold:size=9}$color2${downspeed wlan0} / ${totaldown}
+${offset 15}${downspeedgraph wlan0 40,285 324D23 77B753 100 -l}
+#
+#画线==========================================================================================
+${color6} ${hr 2}
+#
+${loadavg}	#系统负载;
+${color red}${loadgraph} 	#系统负载频谱图;
+
+#显示my-name;
+${font Comic Sans MS:size=45}${color green} L   ${color red} H   ${color green} T
+]];

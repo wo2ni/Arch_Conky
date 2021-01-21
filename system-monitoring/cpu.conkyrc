@@ -1,0 +1,29 @@
+conky.config = {
+	background = true,--嵌入桌面;
+	double_buffer = true,--双倍缓存，防止闪烁;
+--conky没有窗口运行配置
+--{
+	own_window = true,
+	own_window_type = 'normal',
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+--}
+--conky配置窗口透明;新版本;
+--{
+	own_window_argb_visual = true,
+	own_window_transpatent = 'true',
+--}
+	use_xft = true, --自定义字体;
+	use_spacer = 'yes',
+--xftfont Termius:pixelsize=20
+	draw_borders = false,
+	draw_shades = false,
+	alignment = 'top_right', --conky位置;
+--minimum_size 1500 130
+	gap_x = 50, --X轴偏移;
+	gap_y = 130, --Y轴偏移;
+};
+
+conky.text = [[
+${font Comic Sans MS:size=20}${color red}$alignr${freq_g cpu0}GhZ 
+]];
