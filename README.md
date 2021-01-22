@@ -38,7 +38,7 @@ cd Arch_Conky && chmod +x install.sh
 ### 旧版conky配置格式转换
 ```
 git clone https://github.com/wo2ni/Arch_Conky.git
-chmod 700 convert.lua && cd Arch_Conky 
+cd Arch_Conky && chmod +x convert.lua 
 ./convert.lua 旧版配置文件 新版配置文件
 ```
 
