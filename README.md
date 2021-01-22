@@ -14,7 +14,7 @@
 
 ## 安装教程;
 ### Arch Linux  
-- [→必须先安装AUR中的conky-lua-nv](https://aur.archlinux.org/packages/conky-lua-nv/)
+- [→ 单击下载打包好的conky-lua-nv](https://github.com/wo2ni/Arch_Conky/releases/download/V0.1/conky-lua-nv-1.11.6-2-x86_64.pkg.tar.zst)
 ```
 pacman -Syy git ksh lsof   #必须的依赖;
 git clone https://github.com/wo2ni/Arch_Conky.git
