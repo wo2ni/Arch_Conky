@@ -18,14 +18,16 @@
 ```
 pacman -Syy git ksh lsof   #必须的依赖;
 git clone https://github.com/wo2ni/Arch_Conky.git
-cd Arch_Conky && ./install.sh
+cd Arch_Conky && chmod +x install.sh 
+./install.sh
 ```
 
 ### Debian/Ubuntu
 ```
 apt-get update && apt-get install git conky conky-all
 git clone https://github.com/wo2ni/Arch_Conky.git
-cd Arch_Conky && ./install.sh
+cd Arch_Conky && chmod +x install.sh 
+./install.sh
 ```
 
 ### 字体的问题;
@@ -33,7 +35,6 @@ cd Arch_Conky && ./install.sh
 最简单那的方法,下载并安装本人提供的字体包;
 - [→ 本人的子字体包,单击下载](https://github.com/wo2ni/Arch_Conky/releases/download/V0.1/fonts.tar.bz2)
 
-- [→ Google noto字体,大陆需代理](https://github.com/wo2ni/Arch_Conky/releases/download/V0.1/fonts.tar.bz2)
 ### 旧版conky配置格式转换
 ```
 git clone https://github.com/wo2ni/Arch_Conky.git
