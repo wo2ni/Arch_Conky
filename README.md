@@ -37,7 +37,7 @@ cd Arch_Conky && chmod +x install.sh
 ### 字体的问题;
 #### 若为正确安装字体,conky将不能正常运行,  
 最简单那的方法,下载并安装本人提供的字体包;
-- [→ 本人的子字体包,单击下载](https://github.com/wo2ni/Arch_Conky/releases/download/V0.1/fonts.tar.bz2)
+- [→ 本人的字体包,单击下载](https://github.com/wo2ni/Arch_Conky/releases/download/V0.1/fonts.tar.bz2)
 
 ### 旧版conky配置格式转换
 ```
