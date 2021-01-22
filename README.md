@@ -1,5 +1,9 @@
 # 基于Arch Linux的conky,系统资源监视
 
+#### 须知这些炫酷的配置经过自己几个月的努力;  
+你可以随意修改在发布,但请注明我的GitHub地址;  
+请不要将这些用于任何商业用途,以及其他营销手段;
+
 ### 自己的Conky配置;
 [![2021-01-22-01-16-12.png](https://i.postimg.cc/qMWnYDQ9/2021-01-22-01-16-12.png)](https://postimg.cc/HV4V82q2)
 
@@ -41,11 +45,6 @@ git clone https://github.com/wo2ni/Arch_Conky.git
 cd Arch_Conky && chmod +x convert.lua 
 ./convert.lua 旧版配置文件 新版配置文件
 ```
-
-#### 须知这些炫酷的配置经过自己几个月的努力;  
-你可以随意修改在发布,但请注明我的GitHub地址;  
-请不要将这些用于任何商业用途,以及营销手段;
-
 
 - [→ 本人永久的Github地址](https://github.com/wo2ni)
 - [→ Lua教程网址](http://www.runoob.com/lua/)
