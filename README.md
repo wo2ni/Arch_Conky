@@ -1,14 +1,14 @@
 # 基于Arch Linux的conky,系统资源监视
 
-## 演示效果图,操作系统:Arch Linux
-### system_ma
-[![2021-01-22-12-29-06.png](https://i.postimg.cc/wBLk0Ypf/2021-01-22-12-29-06.png)](https://postimg.cc/Ty2m3Shg)
-
-### paroot_ma
-[![2021-01-22-12-30-28.png](https://i.postimg.cc/QtS1yXnb/2021-01-22-12-30-28.png)](https://postimg.cc/k662VdC6)
-
 ### 自己的Conky配置;
 [![2021-01-22-01-16-12.png](https://i.postimg.cc/qMWnYDQ9/2021-01-22-01-16-12.png)](https://postimg.cc/HV4V82q2)
+
+### system-monitoring
+[![2021-01-22-12-29-06.png](https://i.postimg.cc/wBLk0Ypf/2021-01-22-12-29-06.png)](https://postimg.cc/Ty2m3Shg)
+
+### parrot-monitoring
+[![2021-01-22-12-30-28.png](https://i.postimg.cc/QtS1yXnb/2021-01-22-12-30-28.png)](https://postimg.cc/k662VdC6)
+
 
 
 
